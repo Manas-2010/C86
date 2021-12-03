@@ -25,8 +25,8 @@ function player_update(){
 function new_image(get_image){
     fabric.Image.fromURL(get_image, function (Img){
         block_image_object = Img;
-        block_image_height.scaleToHeight(block_image_height);
-        block_image_width.scaleToWidth(block_image_width);
+        block_image_object.scaleToHeight(block_image_height);
+        block_image_object.scaleToWidth(block_image_width);
         block_image_object.set({
             top:player_y,
             left:player_x
@@ -37,10 +37,9 @@ function new_image(get_image){
 
 window.addEventListener("keydown", my_keydown);
 function my_keydown(e){
-    keyPressed= e.keycode;
-
+    keyPressed= e.keyCode;
     console.log(keyPressed);
-    if(e.shiftkey == true && keyPressed == "80"){
+    if(e.shiftKey == true && keyPressed == "80"){
         console.log("shift and P key pressed");
         block_image_height = block_image_height +10;
         block_image_width = block_image_width +10;
@@ -48,7 +47,7 @@ function my_keydown(e){
         document.getElementById("current_height").innerHTML=block_image_height;
     }
 
-if(e.shiftkey == true && keyPressed == "77"){
+if(e.shiftKey == true && keyPressed == "77"){
     console.log("shift and M key pressed");
     block_image_height = block_image_height -10;
     block_image_width = block_image_width -10;
